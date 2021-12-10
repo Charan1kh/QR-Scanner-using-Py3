@@ -1,11 +1,14 @@
+#libraries
 import cv2 
 import numpy as np
 from pyzbar.pyzbar import decode
 
+#decoder
 def decoder(image):
         gray_img = cv2.cvtColor(image,0)
         barcode = decode(gray_img)
 
+#points
         for obj in barcode:
             points = obj.polygon
             (x,y,w,h) = obj.rect
@@ -18,6 +21,7 @@ def decoder(image):
             cv2.putText(frame, string, (x,y), cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,0,0),2)
             print("Barcode: "+barcodeData+" |Type: "+barcodeType)
 
+#videoStills
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
