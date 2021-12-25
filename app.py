@@ -21,7 +21,7 @@ def decoder(image):
             cv2.putText(frame, string, (x,y), cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,0,0),2)
             print("Barcode: "+barcodeData+" |Type: "+barcodeType)
 
-#videoStills
+#videoStill
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
@@ -30,4 +30,3 @@ while True:
     code = cv2.waitKey(18)
     if code == ord('q'):
         break
-R
