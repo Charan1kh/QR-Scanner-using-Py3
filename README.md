@@ -1,1 +1,1 @@
-# DSpro
+# QR Scanner
